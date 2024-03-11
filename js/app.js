@@ -52,11 +52,15 @@ const pintarCard = (pokemon) => {
     const clone = template.cloneNode(true)
     const fragment = document.createDocumentFragment()
 
-    clone.querySelector('.card-body-type').textContent = `${pokemon.tipo.toUpperCase()}`;
+    // clone.querySelector('.card-body-title').innerHTML = `${pokemon.nombre} <span>hp${pokemon.tipo}</span></br>`
+    clone.querySelector('.card-body-nombre').innerHTML = `${pokemon.nombre.toUpperCase()}`;
+    clone.querySelector('.card-body-tipo').innerHTML = `${pokemon.tipo.toUpperCase()}`;
+    clone.querySelector('.card-body-hp').innerHTML = `HP${pokemon.hp}`
+    // clone.querySelector('.card-body-type').textContent = `${pokemon.tipo.toUpperCase()}`;
     clone.querySelector('.card-body-img').setAttribute('src', pokemon.img);
-    clone.querySelector('.card-body-title').innerHTML = `${pokemon.nombre} <span>hp${pokemon.hp}</span></br> <span>${pokemon.tipo}</span>`
-    clone.querySelector('.card-body-text').textContent = `${pokemon.experiencia} XP`
-    
+    // clone.querySelector('.card-body-text').textContent = `${pokemon.experiencia} XP`
+
+    clone.querySelector('.card-body-header').style.background = `var(--${pokemon.tipo})`
 
     
 
@@ -66,27 +70,31 @@ const pintarCard = (pokemon) => {
     
     let body = document.querySelector('body');
 
-    
-    // body.style.backgroundImage = `url(${pokemon.img})`
+    let imgPokemon = clone.querySelector('.card-body-img');
+    imgPokemon.style.background= `var(--${pokemon.tipo})`;
+
 
     //-------------------------------CLONE.QUERYSELECTOR
     let footer = clone.querySelector('.card-footer');
     console.log(footer);
     //----------CLONE.QUERYSELECTOR
-    // footer.style.borderTop = "5px solid black";
+    footer.style.borderTop = "0.rem solid grey";
     // footer.style.borderLeft = "5px solid black";
     // footer.style.borderRight = "5px solid black";
     // footer.style.borderBottom = "10px solid black";
+
+ 
 
     switch (pokemon.tipo) {
         case "psychic":
             body.style.background = "var(--psychic)";
             footer.style.background = "var(--psychic)";
+            
             break;
         case "normal":
             body.style.background = "var(--normal)";
             footer.style.background = "var(--normal)";
-            break;
+            break;  
         case "rock":
             body.style.background = "var(--rock)";
             footer.style.background = "var(--rock)";
@@ -122,24 +130,31 @@ const pintarCard = (pokemon) => {
             break;
         case "fairy":
             body.style.background = "var(--fairy)";
+            footer.style.background = "var(--fairy)";
             break;
         case "bug":
             body.style.background = "var(--bug)";
+            footer.style.background = "var(--bug)";
             break;
         case "ghost":
             body.style.background = "var(--ghost)";
+            footer.style.background = "var(--ghost)";
             break;
         case "fighting":
             body.style.background = "var(--fighting)";
+            footer.style.background = "var(--fighting)";
             break;
         case "poison":
             body.style.background = "var(--poison)";
+            footer.style.background = "var(--poison)";
             break;
         case "flying":
             body.style.background = "var(--flying)";
+            footer.style.background = "var(--flying)";
             break;
         case "ground":
             body.style.background = "var(--ground)";
+            footer.style.background = "var(--ground)";
             break;
     }
 

@@ -45,15 +45,12 @@ body {
 }
 
 .card {
+  border: solid 0.4rem rgb(238, 235, 37);
   background-color: rgb(255, 255, 255);
-  width: 326px;
+  width: 250px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-.card-header {
-  width: 100%;
-  display: block;
+  box-shadow: 0.3rem 0.3rem 0.4rem rgba(43, 43, 43, 0.7);
 }
 .card-body {
   display: flex;
@@ -61,21 +58,26 @@ body {
   align-items: center;
   border-bottom: 1px solid rgba(153, 153, 153, 0.383);
 }
+.card-body-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
 .card-body-img {
-  width: 200px;
+  border-block: solid 1px white;
+  box-shadow: 0 0 5px yellow;
+  width: 100%;
   height: 200px;
-  border: 5px solid rgb(255, 255, 255);
-  border-radius: 25%;
-  background-color: white;
+  padding: 1rem;
+  margin: 0;
+  filter: drop-shadow(3px 3px 5px rgba(255, 240, 122, 0.456));
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='79.392' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='m.135 40.054-14.277-25.722M0 40.054l14.278-25.722M0 40.054v-40m0 40-20-20 20-20 20 20Zm-.135-.716L14.142 65.06M0 39.338-14.278 65.06M0 39.338v40m0-40 20 20-20 20-20-20Zm40.136.716L25.858 14.332M40 40.054l14.278-25.722M40 40.054v-40m-20 20 20-20 20 20-20 20Zm19.865 19.284L54.142 65.06M40 39.338 25.722 65.06M40 39.338v40m20-20-20 20-20-20 20-20Z'  stroke-width='0.5' stroke='hsla(259, 0%, 100%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,-24.784)' fill='url(%23a)'/></svg>");
 }
 .card-body-title {
-  margin-top: 2rem;
   font-size: 1.8rem;
   text-transform: uppercase;
-}
-.card-body-title span {
-  color: var(--dark-gray);
-  font-weight: 400;
 }
 .card-body-text {
   color: var(--dark-gray);
