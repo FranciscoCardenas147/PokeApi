@@ -1,10 +1,15 @@
-
+// INICIO calcular un numero aleatorio entre 1 y 150
 
 const getRandomint = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+// FINAL calcular un numero aleatorio entre 1 y 150
+
+
 // console.log(getRandomint(1, 150))
+
+//INICIO Carga de pagina
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -13,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchData(random)
 })
 
+//FINAL Carga de pagina
 
 
 
@@ -49,8 +55,8 @@ const pintarCard = (pokemon) => {
 
     const flex = document.querySelector('.flex')
     const template = document.querySelector('#template-card').content;
-    const clone = template.cloneNode(true)
-    const fragment = document.createDocumentFragment()
+    const clone = template.cloneNode(true);
+    const fragment = document.createDocumentFragment();
 
     // clone.querySelector('.card-body-title').innerHTML = `${pokemon.nombre} <span>hp${pokemon.tipo}</span></br>`
     clone.querySelector('.card-body-nombre').innerHTML = `${pokemon.nombre.toUpperCase()}`;
@@ -71,6 +77,7 @@ const pintarCard = (pokemon) => {
     let body = document.querySelector('body');
 
     let imgPokemon = clone.querySelector('.card-body-img');
+    
     imgPokemon.style.background= `var(--${pokemon.tipo})`;
 
 
@@ -79,11 +86,7 @@ const pintarCard = (pokemon) => {
     console.log(footer);
     //----------CLONE.QUERYSELECTOR
     footer.style.borderTop = "0.rem solid grey";
-    // footer.style.borderLeft = "5px solid black";
-    // footer.style.borderRight = "5px solid black";
-    // footer.style.borderBottom = "10px solid black";
 
- 
 
     switch (pokemon.tipo) {
         case "psychic":
